@@ -42,7 +42,7 @@ EXPORT_COMPLETED = {
 EXPORT_FAILED = {
     "title": (u"[WARNING] Your GGRC export request did not finish due "
               u"to errors"),
-    "body": u"Please follow the link to write to sheets or download .csv",
+    "body": u"Please go to export page to check details and / or submit export request",
     "url": u"export"
 }
 
