@@ -82,7 +82,7 @@ class WithObjectReview(base.WithBrowser):
   @property
   def reviewers(self):
     """Return page element with reviewers emails."""
-    return self._related_people_list("Reviewer", self._review_root)
+    return self._related_people_list("Reviewers", self._review_root)
 
   def open_submit_for_review_popup(self):
     """Open submit for control popup by clicking on corresponding button."""
