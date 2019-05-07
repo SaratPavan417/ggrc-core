@@ -85,7 +85,6 @@ class TestProgramManagersPropagation(base.TestACLPropagation):
               "delete": True,
               "read_revisions": True,
               "map": False,
-              "create_and_map": True,
               "raise_issue": True,
               "unmap": True,
           },
@@ -198,8 +197,7 @@ class TestProgramManagersPropagation(base.TestACLPropagation):
               "delete": True,
               "read_revisions": True,
               "map": False,
-              "create_and_map": True,
-              "raise_issue": True,
+              "raise_issue": False,
               "unmap": True,
           },
           "Issue Audit": {
@@ -208,7 +206,6 @@ class TestProgramManagersPropagation(base.TestACLPropagation):
               "delete": True,
               "read_revisions": True,
               "map": False,
-              "create_and_map": True,
               "unmap": True,
           },
           "Evidence Audit": {

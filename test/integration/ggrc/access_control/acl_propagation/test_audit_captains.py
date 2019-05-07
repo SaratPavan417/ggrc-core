@@ -164,8 +164,7 @@ class TestAuditorsPropagation(base.TestACLPropagation):
               "delete": True,
               "read_revisions": True,
               "map": False,
-              "create_and_map": True,
-              "raise_issue": True,
+              "raise_issue": False,
               "unmap": True,
           },
           "Issue Audit": {
@@ -174,7 +173,6 @@ class TestAuditorsPropagation(base.TestACLPropagation):
               "delete": True,
               "read_revisions": True,
               "map": False,
-              "create_and_map": True,
               "unmap": True,
           },
           "Evidence Audit": {

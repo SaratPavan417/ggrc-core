@@ -196,8 +196,7 @@ class TestProgramReadersPropagation(base.TestACLPropagation):
               "delete": False,
               "read_revisions": True,
               "map": False,
-              "create_and_map": False,
-              "raise_issue": (False, "unimplemented"),
+              "raise_issue": False,
               "unmap": False,
           },
           "Issue Audit": {
@@ -206,7 +205,6 @@ class TestProgramReadersPropagation(base.TestACLPropagation):
               "delete": False,
               "read_revisions": True,
               "map": False,
-              "create_and_map": False,
               "unmap": False,
           },
           "Evidence Audit": {

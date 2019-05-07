@@ -131,7 +131,14 @@ permissions = {
         },
         "Control",
         "Comment",
-        "Issue",
+        {
+            "type": "Issue",
+            "condition": "is_allowed_based_on",
+            "terms": {
+                "property_name": "archived",
+                "action": "read",
+            },
+        },
         "DataAsset",
         "AccessGroup",
         "Directive",

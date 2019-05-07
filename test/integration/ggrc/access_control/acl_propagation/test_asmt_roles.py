@@ -145,8 +145,7 @@ class TestAsmtRolesPropagation(base.TestACLPropagation):
                   "read": True,
                   "read_revisions": True,
                   "map": False,
-                  "create_and_map": True,
-                  "raise_issue": True,
+                  "raise_issue": False,
               },
               ("Assignees",): {
                   "update": True,
@@ -166,7 +165,6 @@ class TestAsmtRolesPropagation(base.TestACLPropagation):
                   "delete": False,
                   "read_revisions": True,
                   "map": False,
-                  "create_and_map": False,
                   "unmap": False,
               },
           },
