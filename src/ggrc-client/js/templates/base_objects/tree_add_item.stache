@@ -3,6 +3,7 @@
   Licensed under http://www.apache.org/licenses/LICENSE-2.0 <see LICENSE file>
 }}
 
+<div class="details-wrap">
 {{#is_allowed_to_map parent_instance model.model_singular}}
   {{^if parent_instance.archived}}
       <a
@@ -25,3 +26,4 @@
       </a>
   {{/if}}
 {{/is_allowed_to_map}}
+</div>

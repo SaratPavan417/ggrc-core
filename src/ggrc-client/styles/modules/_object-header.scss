@@ -118,6 +118,9 @@
   width: 60px;
   position: relative;
   z-index: zIndex(info-page-dropdown);
+  margin-top: 24px;
+  margin-bottom: 24px;
+  margin-right: 12px;
 
   .dropdown-toggle {
     @extend %clearfix;

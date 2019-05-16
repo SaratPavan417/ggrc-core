@@ -3,6 +3,7 @@
     Licensed under http://www.apache.org/licenses/LICENSE-2.0 <see LICENSE file>
 }}
 
+<div class="details-wrap">
 {{#is_allowed 'create' 'CycleTaskGroupObjectTask' context=null}}
   {{^if_recurring_workflow parent_instance}}
     <a
@@ -35,3 +36,4 @@
     </a>
   {{/if_recurring_workflow}}
 {{/is_allowed}}
+</div>
