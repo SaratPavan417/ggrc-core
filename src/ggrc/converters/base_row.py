@@ -656,6 +656,11 @@ class ExportRowConverter(RowConverter):
         else:
           field_handler = self.objects.get(field)
         value = field_handler.get_value() if field_handler else ""
-        row.append(value or "")
+        if value:
+          row.append(value.replace('<p>', '').replace('</p>', '\n').replace
+                     ('<br>', '\n') or "")
+        else:
+          row.append(value or "")
+
     benchmark_manager.print_benchmaks()
     return row
