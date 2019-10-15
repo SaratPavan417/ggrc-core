@@ -342,7 +342,7 @@ class TestWithReadOnlyAccessImport(TestCase):
 
     data = OrderedDict([
         ("object_type", "System"),
-        ("Code*", "CODE"),
+        ("Code*", ""),
         ("Admin", "user@example.com"),
         ("Assignee", "user@example.com"),
         ("Verifier", "user@example.com"),
@@ -361,7 +361,7 @@ class TestWithReadOnlyAccessImport(TestCase):
 
     data = OrderedDict([
         ("object_type", "System"),
-        ("Code*", "CODE"),
+        ("Code*", ""),
         ("Admin", "user@example.com"),
         ("Assignee", "user@example.com"),
         ("Verifier", "user@example.com"),
@@ -601,7 +601,7 @@ class TestWithReadOnlyAccessImport(TestCase):
 
     data = OrderedDict([
         ("object_type", "System"),
-        ("Code*", "CODE"),
+        ("Code*", ""),
         ("Admin", "user@example.com"),
         ("Assignee", "user@example.com"),
         ("Verifier", "user@example.com"),
@@ -654,7 +654,7 @@ class TestWithReadOnlyAccessImport(TestCase):
 
     data = OrderedDict([
         ("object_type", "System"),
-        ("Code*", "CODE"),
+        ("Code*", ""),
         ("Admin", "user@example.com"),
         ("Assignee", "user@example.com"),
         ("Verifier", "user@example.com"),
@@ -735,7 +735,7 @@ class TestWithReadOnlyAccessImport(TestCase):
 
     data = OrderedDict([
         ("object_type", "System"),
-        ("Code*", "CODE"),
+        ("Code*", ""),
         ("Admin", "user@example.com"),
         ("Assignee", "user@example.com"),
         ("Verifier", "user@example.com"),
@@ -837,7 +837,7 @@ class TestWithReadOnlyAccessImport(TestCase):
 
     response = self.import_data(OrderedDict([
         ("object_type", "System"),
-        ("Code*", "System-1"),
+        ("Code*", ""),
         ("Admin", user.email),
         ("Assignee", user.email),
         ("Verifier", user.email),
