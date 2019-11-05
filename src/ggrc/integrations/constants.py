@@ -63,6 +63,23 @@ COMMENT_TMPL = (
 
 AVAILABLE_PRIORITIES = ("P0", "P1", "P2", "P3", "P4", )
 AVAILABLE_SEVERITIES = ("S0", "S1", "S2", "S3", "S4", )
+FLAG_VALIDATORS = (
+    ('FALSE', False),
+    ('False', False),
+    ('false', False),
+    ('TRUE', True),
+    ('True', True),
+    ('true', True),
+    ('yes', True),
+    ('YES', True),
+    ('Yes ', True),
+    ('yEs', True),
+    (' no ', False),
+    ('No ', False),
+    ('nO', False),
+    ('NO', False),
+)
+
 
 COMMON_SYNCHRONIZATION_FIELDS = (
     "status",

@@ -358,7 +358,7 @@ class TestExportEmptyTemplate(TestCase):
     self.assertIn("Allowed values are:\n{}".format('\n'.join(
         all_models.Assessment.VALID_CONCLUSIONS)), response.data)
 
-  @ddt.data("Assessment", "Audit")
+  @ddt.data("Assessment", "Audit", "AssessmentTemplate")
   def test_archived_tip(self, model):
     """Tests if Archived column has tip message for {}. """
     data = {
@@ -490,6 +490,19 @@ class TestExportEmptyTemplate(TestCase):
                                 data=dumps(data), headers=self.headers)
     self.assertIn("Allowed values are:\n{}".format('\n'.join(
         constants.AVAILABLE_PRIORITIES)), response.data)
+
+  @ddt.data("Assessment", "Audit", "AssessmentTemplate")
+  def test_archived_attributes(self, model):
+    """Test to check import values for archived objects"""
+    data = {
+        "export_to": "csv",
+        "objects": [
+            {"object_name": model, "fields": ["archived"]},
+        ]
+    }
+    response = self.client.post("/_service/export_csv",
+                                data=dumps(data), headers=self.headers)
+    self.assertIn("Allowed values are:\nyes\nno", response.data)
 
 
 @ddt.ddt
@@ -1157,3 +1170,17 @@ class TestExportPerformance(TestCase):
       self.assertNotEqual(counter.get, 0)
       self.assertLessEqual(counter.get, query_limit)
     self.assertEqual(len(response[model_name]), 3)
+
+  @ddt.data(*constants.FLAG_VALIDATORS)
+  @ddt.unpack
+  def test_import_archived_values(self, import_value, expected_value):
+    """Test to check import values for archived."""
+    with factories.single_commit():
+      audit = factories.AuditFactory()
+    self.import_data(collections.OrderedDict([
+        ("object_type", "Audit"),
+        ("Code*", audit.slug),
+        ("archived", import_value),
+    ]))
+    audit1 = all_models.Audit.query.filter_by(title=audit.title).first()
+    self.assertEqual(audit1.archived, expected_value)
