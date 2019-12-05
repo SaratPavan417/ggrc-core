@@ -491,6 +491,24 @@ class TestExportEmptyTemplate(TestCase):
     self.assertIn("Allowed values are:\n{}".format('\n'.join(
         constants.AVAILABLE_PRIORITIES)), response.data)
 
+  @ddt.data("AccessGroup", "AccountBalance", "DataAsset", "Facility",
+            "KeyReport", "Market", "Metric", "OrgGroup", "Process",
+            "Product", "ProductGroup", "Project", "System",
+            "TechnologyEnvironment", "Vendor", "Threat", "Objective",
+            "Issue", "Contract", "Policy", "Regulation", "Requirement",
+            "Standard", "Program", "Assessment")
+  def test_recipients_tips(self, model):
+    """Tests if {} has hint for Recipients and Send by default"""
+    data = {
+        "export_to": "csv",
+        "objects": [{"object_name": model, "fields": ["recipients",
+                                                      "send_by_default"]}]
+    }
+    response = self.client.post("/_service/export_csv",
+                                data=dumps(data), headers=self.headers)
+
+    self.assertIn("Automatically provided values", response.data)
+
 
 @ddt.ddt
 class TestExportSingleObject(TestCase):
